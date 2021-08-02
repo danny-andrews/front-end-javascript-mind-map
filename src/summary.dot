@@ -1,0 +1,75 @@
+// https://colorhunt.co/palette/c70d3aed510723033802383c
+digraph {
+	layout=neato;
+  overlap=false;
+  imagepath="./public";
+  node [
+    shape="box"
+    style=filled
+    fillcolor="#C70D3A"
+    fontname="Geneva-bold"
+    fontcolor="white"
+  ];
+	"Full-Stack Development" -> {
+    edge [len=2];
+    node [shape="ellipse" fillcolor="#ED5107"];
+    "Programming Fundamentals";
+    "JavaScript";
+    "Client-Side";
+    "Server-Side";
+    "CS Fundamentals";
+    "Dev Tooling";
+  };
+
+  node [shape="ellipse" fillcolor="#230338"];
+  "Programming Fundamentals" -> {
+    Arrays;
+    Conditionals;
+    Variables;
+    Loops;
+    "Data Types";
+  }
+  JavaScript -> {
+    "Instantiation Patterns" [URL="/images/js-instantiation-patterns.png" target="_blank" class="link"]
+  }
+  "CS Fundamentals" -> {
+    Algorithms;
+    "Data Structures";
+  }
+  "Dev Tooling" -> {
+    Git;
+    "CLI Commands";
+  }
+  "Client-Side" -> {
+    "DOM APIs",
+    jQuery,
+    React,
+    CSS,
+    HTML
+  }
+  "Server-Side" -> {
+    SQL,
+    "REST APIs",
+    Deployment
+  }
+
+  node [shape="ellipse" fillcolor="#02383C"];
+  "Data Structures" -> {
+    "Linked List",
+    "Hash Table",
+    Stack,
+    Queue,
+    Tree
+  }
+  Algorithms -> {
+    "Dynamic Programming",
+    "Sorting Algorithms",
+    "Big-O Notation"
+  }
+
+  node [shape="ellipse" fillcolor="#784522"];
+  "Sorting Algorithms" -> {
+    "Bubble Sort",
+    "Insertion Sort"
+  }
+}

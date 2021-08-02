@@ -1,3 +1,50 @@
-.link text {
+:root {
+  --color-text: #393939;
+
+  --color-link: #395fca;
+
+  --color-level-1: #147dbe;
+  --color-level-2: #e46b6b;
+  --color-level-3: #ff9f4b;
+  --color-level-4: #fdcd85;
+  --color-level-5: #f1e9cd;
+}
+
+/* color scheme https://coolors.co/c70d3a-ed5107-230338-02383c-784522-845636 */
+.node text {
+  fill: var(--color-text);
+}
+
+.node a text {
   text-decoration: underline;
+  fill: var(--color-link);
+}
+
+.level-1 polygon,
+.level-1 path {
+  fill: var(--color-level-1);
+}
+
+.level-1 text {
+  fill: white;
+}
+
+.level-2 polygon,
+.level-2 path {
+  fill: var(--color-level-2);
+}
+
+.level-3 polygon,
+.level-3 path {
+  fill: var(--color-level-3);
+}
+
+.level-4 polygon,
+.level-4 path {
+  fill: var(--color-level-4);
+}
+
+.level-5 polygon,
+.level-5 path {
+  fill: var(--color-level-5);
 }

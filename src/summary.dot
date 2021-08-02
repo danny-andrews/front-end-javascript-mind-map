@@ -1,75 +1,141 @@
-// https://colorhunt.co/palette/c70d3aed510723033802383c
 digraph {
-	layout=neato;
-  overlap=false;
-  imagepath="./public";
-  node [
-    shape="box"
-    style=filled
-    fillcolor="#C70D3A"
-    fontname="Geneva-bold"
-    fontcolor="white"
-  ];
-	"Full-Stack Development" -> {
-    edge [len=2];
-    node [shape="ellipse" fillcolor="#ED5107"];
-    "Programming Fundamentals";
-    "JavaScript";
-    "Client-Side";
-    "Server-Side";
-    "CS Fundamentals";
-    "Dev Tooling";
-  };
+  // neato format
+  overlap=false
+  imagepath="./public"
+  sep="+20.0"
 
-  node [shape="ellipse" fillcolor="#230338"];
-  "Programming Fundamentals" -> {
-    Arrays;
-    Conditionals;
-    Variables;
-    Loops;
-    "Data Types";
+  // dot format
+  ranksep="1.2 equally"
+  nodesep=0.2
+
+  node [
+    class="level-1"
+    // style=rounded
+    shape="box"
+    fontname="Geneva-bold"
+    fontsize=54.0
+  ]
+	"Full-Stack Development" -> {
+    node [class="level-2" fontsize=36.0]
+    "CS Fundamentals"
+    "JavaScript" [
+      URL="/images/js-cheatsheet.pdf"
+      target="_blank"
+    ]
+    "Client-Side"
+    "Server-Side"
+    "Dev Tooling"
   }
+
+  node [class="level-3" fontsize=24.0]
   JavaScript -> {
-    "Instantiation Patterns" [URL="/images/js-instantiation-patterns.png" target="_blank" class="link"]
+    "Instantiation Patterns" [
+      URL="/images/js-instantiation-patterns.png"
+      target="_blank"
+    ]
+    Asynchronicity
   }
   "CS Fundamentals" -> {
-    Algorithms;
-    "Data Structures";
+    Algorithms
+    "Data Structures"
+    "Programming Languages"
   }
   "Dev Tooling" -> {
-    Git;
-    "CLI Commands";
-  }
-  "Client-Side" -> {
-    "DOM APIs",
-    jQuery,
-    React,
-    CSS,
-    HTML
+    CLI
+    "Git/GitHub"
   }
   "Server-Side" -> {
-    SQL,
-    "REST APIs",
+    Databases
+    "REST APIs"
+    Scaling
     Deployment
   }
+  "Client-Side" -> {
+    "DOM APIs" [
+      URL="https://github.com/danny-andrews/Javascript-DOM-API-cheatsheet/blob/master/readme.md"
+      target="_blank"
+    ]
+    AJAX
+    jQuery
+    CSS
+    HTML
+    React
+  }
 
-  node [shape="ellipse" fillcolor="#02383C"];
+  node [class="level-4" fontsize=16.0]
   "Data Structures" -> {
-    "Linked List",
-    "Hash Table",
-    Stack,
-    Queue,
+    "Linked List"
+    "Hash Table"
+    Stack
+    Queue
     Tree
   }
   Algorithms -> {
-    "Dynamic Programming",
-    "Sorting Algorithms",
+    "Sorting Algorithms"
+    "Dynamic Programming"
     "Big-O Notation"
   }
+  "Programming Languages" -> {
+    Variables
+    "Data Types"
+    Conditionals
+    Loops
+    Functions
+    Arrays
+    Objects
+  }
+  "Instantiation Patterns" -> {
+    Functional
+    "Functional Shared"
+    Prototypical
+    Pseudoclassical
+  }
+  Asynchronicity -> {
+    Callbacks
+    "Event Loop"
+    Promises
+    "Async/Await"
+  }
+  React -> {
+    Props
+    State
+    Lifecycle
+    "Virtual DOM"
+  }
+  Databases -> {
+    "Relational Database"
+    "Non-Relational Database"
+    SQL
+  }
+  CLI -> { ls cd touch rm }
+  "DOM APIs" -> {
+    "Quering and Traversal" [
+      URL="https://learn-2.galvanize.com/content_link/github.com/gSchool/dom-block/DOM%20Manipulation/02-Traversal.md"
+      target="_blank"
+    ]
+    Manipulation [
+      URL="https://learn-2.galvanize.com/content_link/github.com/gSchool/dom-block/DOM%20Manipulation/03-Manipulation.md"
+      target="_blank"
+    ]
+    Creation [
+      URL="https://learn-2.galvanize.com/content_link/github.com/gSchool/dom-block/DOM%20Manipulation/04-Creation%20and%20Deletion.md"
+      target="_blank"
+    ]
+    Removal [
+      URL="https://learn-2.galvanize.com/content_link/github.com/gSchool/dom-block/DOM%20Manipulation/04-Creation%20and%20Deletion.md"
+      target="_blank"
+    ]
+    Events [
+      URL="https://learn-2.galvanize.com/content_link/github.com/gSchool/dom-block/Event%20Listeners/01-events.md"
+      target="_blank"
+    ]
+  }
 
-  node [shape="ellipse" fillcolor="#784522"];
+  node [class="level-5" fontsize=10.0]
   "Sorting Algorithms" -> {
-    "Bubble Sort",
+    "Bubble Sort"
     "Insertion Sort"
   }
+  Queue -> Dequeue
+  Stack -> Dequeue
 }

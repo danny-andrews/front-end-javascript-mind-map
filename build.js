@@ -5,10 +5,13 @@ import ejs from "ejs";
 
 const exec = util.promisify(execCb);
 
-await exec("dot src/summary.dot -Tsvg -o build/summary.svg");
-const [template, svg] = await Promise.all([
+await exec("dot src/summary.dot -T svg -K neato -o build/summary.neato.svg");
+await exec("dot src/summary.dot -T svg -o build/summary.dot.svg");
+const [template, neato, dot] = await Promise.all([
   readFile("src/index.html.ejs", "utf8"),
-  readFile("build/summary.svg", "utf8"),
+  readFile("build/summary.neato.svg", "utf8"),
+  readFile("build/summary.dot.svg", "utf8"),
 ]);
-const output = ejs.render(template, { svg });
+const config = { svgs: { neato, dot } };
+const output = ejs.render(template, config);
 await writeFile("public/index.html", output);
